@@ -1,6 +1,15 @@
-export default function IsLogin(req, res){
-    res.statusCode = 200;
-    res.json({ name: req.cookies.a_name });
-    
-    console.log("res : " + res);
-  };
+import { NextResponse } from "next/server";
+export default function MarketData(props) {
+  return (
+      <></>
+  )
+}
+
+export async function getServerSideProps({ req, res, resolvedUrl }) {
+  res.setHeader("Content-Type", "application/json");
+  res.write('{\"market\": "11", "prices":22}');
+  res.end();
+  return {
+      props: {},
+  }
+}

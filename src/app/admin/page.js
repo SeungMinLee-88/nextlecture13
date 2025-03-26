@@ -9,13 +9,16 @@ export default function Admin() {
   const [isLogin, setIsLogin] = useState(false);
 
   function checkLogin() {
-    Axios.get("/api/isLogin").then((res) => {
+    Axios.get("/api/isLogin").then((res) => {  
+      console.log("res.error : " + res.error);  
+      console.log("res.status : " + res.status);  
+      console.log("res.name : " + res.name);  
       if (res.status === 200 && res.data.name) {
         //로그인
         setIsLogin(true);
       } else {
         //로그인 안됨
-        router.push("/login");
+        //router.push("/login");
       }
     });
   }
